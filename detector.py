@@ -15,6 +15,9 @@ while(True):
         cv2.rectangle(img,(x,y),(x+w,y+h),(0,255,0),2)
         id,conf = rec.predict(gray[y:y+h,x:x+w])
         flip_fr = cv2.flip(img,1)
+        if id ==1:
+            id = "kushal"
+            
         cv2.putText(img,str(id),(x,y+h), font, 1, (200,255,155), 2, cv2.LINE_AA)
 #        cv2.putText(flip_fr, str(id), (x, y+h), font, 1,(255, 255, 0), 2)
  #       cv2.putText(cv2.cv.fromarray(img),str(id),(x,y+h),font,255,2)
